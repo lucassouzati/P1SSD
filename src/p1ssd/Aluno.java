@@ -11,6 +11,7 @@ package p1ssd;
  */
 public class Aluno {
     
+    private String nome;
     private String periodo;
     private String idade;
     private String sexo;
@@ -31,7 +32,8 @@ public class Aluno {
     public Aluno() {
     }
 
-    public Aluno(String periodo, String idade, String sexo, String moraemitap, String trabalha, String casado, String filhos, String origem, String ingresso, String cota, String locomocao, String tempochegar, String dependencias, String perdeu, String afinidade, String motivacao) {
+    public Aluno(String nome, String periodo, String idade, String sexo, String moraemitap, String trabalha, String casado, String filhos, String origem, String ingresso, String cota, String locomocao, String tempochegar, String dependencias, String perdeu, String afinidade, String motivacao) {
+        this.nome = nome;
         this.periodo = periodo;
         this.idade = idade;
         this.sexo = sexo;
@@ -50,6 +52,14 @@ public class Aluno {
         this.motivacao = motivacao;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    } 
+    
     public String getPeriodo() {
         return periodo;
     }
@@ -178,5 +188,11 @@ public class Aluno {
         this.motivacao = motivacao;
     }
 
+    @Override
+    public String toString() {
+        return "Aluno{" + "nome=" + nome + ", periodo=" + periodo + ", idade=" + idade + ", sexo=" + sexo + ", moraemitap=" + moraemitap + ", trabalha=" + trabalha + ", casado=" + casado + ", filhos=" + filhos + ", origem=" + origem + ", ingresso=" + ingresso + ", cota=" + cota + ", locomocao=" + locomocao + ", tempochegar=" + tempochegar + ", dependencias=" + dependencias + ", perdeu=" + perdeu + ", afinidade=" + afinidade + ", motivacao=" + motivacao + '}';
+    }
+    
+    
     
 }
