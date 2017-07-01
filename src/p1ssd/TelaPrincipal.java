@@ -8,10 +8,18 @@ package p1ssd;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+
+import weka.classifiers.bayes.NaiveBayes;
+import weka.core.DenseInstance;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.converters.ConverterUtils.DataSource;
 
 /**
  *
@@ -25,9 +33,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     ArrayList<Aluno> alunos = new ArrayList<Aluno>();
     DefaultTableModel modeloTabela =  new DefaultTableModel();
+    DataSource ds;
+    Instances ins;
         
     
-    public TelaPrincipal() {
+    public TelaPrincipal() throws Exception {
         initComponents();
         modeloTabela = (DefaultTableModel)resultadosTable.getModel();
         //modeloTabela.removeRow(0);
@@ -35,6 +45,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         for(int i = 0; i <  modeloTabela.getRowCount(); i++){
             modeloTabela.removeRow(i);
         }
+        this.ds = new DataSource("src/Respostas-28-07.arff");
+        this.ins = ds.getDataSet();
         
     }
 
@@ -115,7 +127,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2.setText("Período");
 
         periodoRadio.add(jRadioButton1);
-        jRadioButton1.setText("1º");
+        jRadioButton1.setText("1oP");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -123,7 +135,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         periodoRadio.add(jRadioButton2);
-        jRadioButton2.setText("2º");
+        jRadioButton2.setText("2oP");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
@@ -131,7 +143,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         periodoRadio.add(jRadioButton3);
-        jRadioButton3.setText("3º");
+        jRadioButton3.setText("3oP");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton3ActionPerformed(evt);
@@ -139,7 +151,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         periodoRadio.add(jRadioButton4);
-        jRadioButton4.setText("4º");
+        jRadioButton4.setText("4oP");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton4ActionPerformed(evt);
@@ -147,7 +159,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         periodoRadio.add(jRadioButton5);
-        jRadioButton5.setText("5º");
+        jRadioButton5.setText("5oP");
         jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton5ActionPerformed(evt);
@@ -155,7 +167,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         periodoRadio.add(jRadioButton6);
-        jRadioButton6.setText("6º");
+        jRadioButton6.setText("6oP");
         jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton6ActionPerformed(evt);
@@ -163,7 +175,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         periodoRadio.add(jRadioButton7);
-        jRadioButton7.setText("7º");
+        jRadioButton7.setText("7oP");
         jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton7ActionPerformed(evt);
@@ -171,7 +183,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         periodoRadio.add(jRadioButton8);
-        jRadioButton8.setText("8º");
+        jRadioButton8.setText("8oP");
         jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton8ActionPerformed(evt);
@@ -205,7 +217,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         idadeRadio.add(jRadioButton12);
-        jRadioButton12.setText("Mais de 30 anos");
+        jRadioButton12.setText("MaisDe30");
         jRadioButton12.setName(""); // NOI18N
         jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,6 +227,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("Sexo");
 
+        sexoRadio.add(jRadioButton13);
         jRadioButton13.setText("Masculino");
         jRadioButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,7 +254,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         trabalhaRadio.add(jRadioButton16);
-        jRadioButton16.setText("Não");
+        jRadioButton16.setText("Nao");
 
         casadoRadio.add(jRadioButton17);
         jRadioButton17.setText("Sim");
@@ -252,7 +265,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         casadoRadio.add(jRadioButton18);
-        jRadioButton18.setText("Não");
+        jRadioButton18.setText("Nao");
 
         jLabel6.setText("Casado(a)");
 
@@ -284,7 +297,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         cotaRadio.add(jRadioButton20);
-        jRadioButton20.setText("Não");
+        jRadioButton20.setText("Nao");
 
         jLabel11.setText("Locomocao");
 
@@ -376,7 +389,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         moraEmItapRadio.add(jRadioButton22);
-        jRadioButton22.setText("Não");
+        jRadioButton22.setText("Nao");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -467,26 +480,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                             .addComponent(afinidadeSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel15)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(filhosSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(filhosSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel7))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(origemSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(origemSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel8))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel9)
                                             .addComponent(ingressoSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(nomeTextField))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(307, 307, 307)
-                                        .addComponent(jLabel7)))
-                                .addGap(47, 47, 47)
-                                .addComponent(jLabel8)))
-                        .addGap(0, 13, Short.MAX_VALUE)))
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -691,6 +701,44 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.alunos.add(aluno);
         System.out.println(aluno.toString());
         
+         NaiveBayes nb = new NaiveBayes();
+        try {
+            ins.setClassIndex(15);
+            nb.buildClassifier(this.ins);
+        } catch (Exception ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+       Instance novo = new DenseInstance(16);
+       novo.setDataset(ins);
+       novo.setValue(0, aluno.getPeriodo());//private String periodo;
+       novo.setValue(1, aluno.getIdade());//    private String idade;
+       novo.setValue(2, aluno.getSexo());//    private String sexo;
+       novo.setValue(3, aluno.getMoraemitap());//    private String moraemitap;
+       novo.setValue(4, aluno.getTrabalha());//    private String trabalha;
+       novo.setValue(5, aluno.getCasado());//    private String casado;
+       novo.setValue(6, aluno.getFilhos());//    private String filhos;
+       novo.setValue(7, aluno.getOrigem());    //    private String origem
+       novo.setValue(8, aluno.getIngresso());      //    private String ingresso;
+       novo.setValue(9, aluno.getCota());      //    private String cota;
+       novo.setValue(10, aluno.getLocomocao());      //    private String locomocao;
+       novo.setValue(11, aluno.getTempochegar());      //    private String tempochegar;
+       novo.setValue(12, aluno.getDependencias());      //    private String dependencias;
+       novo.setValue(13, aluno.getPerdeu());      //    private String perdeu;
+       novo.setValue(14, aluno.getAfinidade());      //    private String afinidade;
+       //novo.setValue(15, aluno.getTempochegar());      //    private String motivacao;
+
+       double probabilidade[] = new double[4];
+        try {
+            probabilidade = nb.distributionForInstance(novo);
+        } catch (Exception ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        for(int i = 0; i<probabilidade.length; i++){
+            System.out.println("Motivacao index" + i + ": " + probabilidade[i]);
+        }
         
         modeloTabela.addRow(new Object[]{aluno.getNome(), aluno.getSexo(), aluno.getPeriodo(), aluno.getPeriodo()});
         
@@ -746,7 +794,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipal().setVisible(true);
+                try {
+                    new TelaPrincipal().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

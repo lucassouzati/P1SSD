@@ -137,9 +137,15 @@
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="filhosSelect" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="filhosSelect" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="origemSelect" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="origemSelect" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -149,23 +155,13 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="nomeTextField" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="307" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="nomeTextField" min="-2" pref="336" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -283,7 +279,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="periodoRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="1&#xba;"/>
+        <Property name="text" type="java.lang.String" value="1oP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton1ActionPerformed"/>
@@ -294,7 +290,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="periodoRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="2&#xba;"/>
+        <Property name="text" type="java.lang.String" value="2oP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton2ActionPerformed"/>
@@ -305,7 +301,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="periodoRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="3&#xba;"/>
+        <Property name="text" type="java.lang.String" value="3oP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton3ActionPerformed"/>
@@ -316,7 +312,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="periodoRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="4&#xba;"/>
+        <Property name="text" type="java.lang.String" value="4oP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton4ActionPerformed"/>
@@ -327,7 +323,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="periodoRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="5&#xba;"/>
+        <Property name="text" type="java.lang.String" value="5oP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton5ActionPerformed"/>
@@ -338,7 +334,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="periodoRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="6&#xba;"/>
+        <Property name="text" type="java.lang.String" value="6oP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton6ActionPerformed"/>
@@ -349,7 +345,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="periodoRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="7&#xba;"/>
+        <Property name="text" type="java.lang.String" value="7oP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton7ActionPerformed"/>
@@ -360,7 +356,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="periodoRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="8&#xba;"/>
+        <Property name="text" type="java.lang.String" value="8oP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton8ActionPerformed"/>
@@ -409,7 +405,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="idadeRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Mais de 30 anos"/>
+        <Property name="text" type="java.lang.String" value="MaisDe30"/>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
       <Events>
@@ -423,6 +419,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton13">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="sexoRadio"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Masculino"/>
       </Properties>
       <Events>
@@ -461,7 +460,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="trabalhaRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
+        <Property name="text" type="java.lang.String" value="Nao"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton17">
@@ -480,7 +479,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="casadoRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
+        <Property name="text" type="java.lang.String" value="Nao"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
@@ -571,7 +570,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="cotaRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
+        <Property name="text" type="java.lang.String" value="Nao"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
@@ -799,7 +798,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="moraEmItapRadio"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
+        <Property name="text" type="java.lang.String" value="Nao"/>
       </Properties>
     </Component>
   </SubComponents>
