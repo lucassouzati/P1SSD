@@ -26,7 +26,7 @@ import weka.core.converters.ConverterUtils.DataSource;
  *
  * @author lsiqueira
  */
-public class TelaPrincipal extends javax.swing.JFrame {
+public class Questao1 extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaPrincipal
@@ -38,7 +38,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     Instances ins;
         
     
-    public TelaPrincipal() throws Exception {
+    public Questao1() throws Exception {
         initComponents();
         modeloTabela = (DefaultTableModel)resultadosTable.getModel();
         //modeloTabela.removeRow(0);
@@ -712,7 +712,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             ins.setClassIndex(15);
             nb.buildClassifier(this.ins);
         } catch (Exception ex) {
-            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Questao1.class.getName()).log(Level.SEVERE, null, ex);
         }
        Instance novo = new DenseInstance(16);
        try {
@@ -738,7 +738,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         try {
             probabilidade = nb.distributionForInstance(novo);
         } catch (Exception ex) {
-            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Questao1.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         int index_maiormotivacao = 0;
@@ -808,23 +808,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Questao1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Questao1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Questao1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Questao1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new TelaPrincipal().setVisible(true);
+                    new Questao1().setVisible(true);
                 } catch (Exception ex) {
-                    Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Questao1.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
